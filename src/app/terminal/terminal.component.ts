@@ -14,7 +14,7 @@ export class TerminalComponent implements OnInit {
 
   ngOnInit() {
     // calling the console
-     this.consoleText(['Hello...', 'Welcome to the AI experiment', 'Made with Love.'], 'text',['tomato','rebeccapurple','lightblue']);
+     this.consoleText(['Hello...', 'Welcome to the AI experiment', 'Made with Love.'], 'text',['green','rebeccapurple','lightblue']);
   }
 
 
@@ -28,7 +28,7 @@ export class TerminalComponent implements OnInit {
     let x = 1;
     let waiting = false;
     const targett = document.getElementById(id)
-    targett.setAttribute('style', 'color:' + colors[0])
+    targett.setAttribute('style', 'color:' + colors[0]);
     window.setInterval(function () {
       if (letterCount === 0 && waiting === false) {
         waiting = true;
