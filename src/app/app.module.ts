@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { TerminalComponent } from './terminal/terminal.component';
 import { MainComponent } from './main/main.component';
 
+// needies?
+import * as $ from 'jquery';
+
 @NgModule({
   declarations: [
     AppComponent,
