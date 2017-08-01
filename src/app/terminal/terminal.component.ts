@@ -15,7 +15,7 @@ export class TerminalComponent implements OnInit {
 
   timer;
 
-  chatLog: String = "booting ....  ....  <br>Hello<br>I would like to talk to you<br>  :)<br>";
+  chatLog: String = "booting ....  ....  <br>Hello<br>I would like to talk to you<br>  :)<br>booting ....  ....  <br>Hello<br>I would like to talk to you<br>  :)<br>booting ....  ....  <br>Hello<br>I would like to talk to you<br>  :)<br>";
 
   constructor() {}
 
@@ -33,7 +33,7 @@ export class TerminalComponent implements OnInit {
       $('.test').html(_text.substring(0, n + 1));
       n++;
 
-      this.timer = setTimeout(() => this.selff.typeWriter(_text, n), 200);
+      this.timer = setTimeout(() => this.selff.typeWriter(_text, n), 70);
     } else {
       console.log('finished with typing');
     }
