@@ -1,43 +1,43 @@
+<div class="root">
+  <main class="computerContainer">
+    <section class="screenContainer">
+      <div class="screenFrame">
+        <div class="screen">
+          <div class="terminal">
+            <div class="outputContainer">
+              <!-- output appears here-->
+            </div>
+            <div class="currentLine">
+              <span class="prompt">$</span>
+              <div class="beforeToken textmono">
 
- <div class="root">
-    <main class="computerContainer">
-      <section class="screenContainer">
-        <div class="screenFrame">
-          <div class="screen">
-            <div class="terminal">
-              <div class="outputContainer">
-                <!-- output appears here-->
-              </div>
-              <div class="currentLine">
-                <span class="prompt">$</span>
-                <div class="beforeToken textmono">
-       
                 <div class="inputContainer">
-                     QS1.2 CubSt -!- </div>
-    <div class="test" data-text="Hello,...."></div>
-    
-    <div id="blinking" class="blinking-cursor">_</div>
-                  <input id="focuss" [hidden]="!promptAvailable" (keyup.enter)="hitEnter()" [(ngModel)]="newInput" class="input" type="text" data-length="28" autofocus/>
-                </div>
+                  QS1.2 CubSt -!- </div>
+                <div class="test" data-text="Hello,...."></div>
+
+                <div id="blinking" class="blinking-cursor">_</div>
+                <input id="focuss" [readonly]="!promptAvailable" (keyup.enter)="hitEnter()" [(ngModel)]="newInput" class="input" type="text"
+                  data-length="32" autofocus/>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <section class="bodyDecor">
-        <div class="floppyDriveContainer">
-          <div class="floppyDrive">
-            <div class="floppyShade"></div>
-            <div class="floppyShadeDarker"></div>
-            <div class="floppySlot"></div>
-          </div>
+      </div>
+    </section>
+    <section class="bodyDecor">
+      <div class="floppyDriveContainer">
+        <div class="floppyDrive">
+          <div class="floppyShade"></div>
+          <div class="floppyShadeDarker"></div>
+          <div class="floppySlot"></div>
         </div>
-        <div class="logoContainer">
-          <div class="logo"></div>
-        </div>
-      </section>
-      <section class="bottomDecor">
-        <div class="bottomButton"></div>
-      </section>
-    </main>
-  </div>
+      </div>
+      <div class="logoContainer">
+        <div class="logo"></div>
+      </div>
+    </section>
+    <section class="bottomDecor">
+      <div class="bottomButton"></div>
+    </section>
+  </main>
+</div>

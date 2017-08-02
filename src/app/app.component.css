@@ -163,3 +163,11 @@ a:hover {
         width: 42rem;
     }
 }
+
+
+
+
+.pop {
+    background-image: url("/assets/pop.jpg");
+    background-size: cover;
+}

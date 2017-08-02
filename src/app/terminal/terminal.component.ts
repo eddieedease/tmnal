@@ -15,11 +15,12 @@ export class TerminalComponent implements OnInit {
 
   timer;
   newInput: String;
-  AllowedLengthInput = 28;
+  AllowedLengthInput = 32;
 
-  chatLogg: String = "............................<br>";
+  chatLogg: String = "................................<br>";
 
   chatLog: String = `
+..............................<br>
 .....T___......<br>
 .....|[o]|.....<br>
 .....\_-_/.....<br>
@@ -62,7 +63,7 @@ export class TerminalComponent implements OnInit {
     if (this.newInput.length <= this.AllowedLengthInput) {
     document.getElementById("blinking").focus();
       
-      this.chatLog = this.chatLog + '<br>' + this.newInput;
+      this.chatLog = this.chatLog + '<br><span style="color:#00fe00" class="prompt">$  </span>' + this.newInput;
       this.typeWriter(this.chatLog, stringLength);
       this.newInput = "";
     }
