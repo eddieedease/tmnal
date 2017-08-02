@@ -16,8 +16,8 @@
                      QS1.2 CubSt -!- </div>
     <div class="test" data-text="Hello,...."></div>
     
-    <div class="blinking-cursor">_</div>
-                  <input (keyup.enter)="hitEnter()" class="input" type="text" autofocus/>
+    <div id="blinking" class="blinking-cursor">_</div>
+                  <input id="focuss" [hidden]="!promptAvailable" (keyup.enter)="hitEnter()" [(ngModel)]="newInput" class="input" type="text" data-length="28" autofocus/>
                 </div>
               </div>
             </div>

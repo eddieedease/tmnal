@@ -14,14 +14,27 @@ export class TerminalComponent implements OnInit {
   selff;
 
   timer;
+  newInput: String;
+  AllowedLengthInput = 28;
 
-  chatLog: String = "booting ....  ....  <br>Hello<br>I would like to talk to you<br>  :)<br>booting ....  ....  <br>Hello<br>I would like to talk to you<br>  :)<br>booting ....  ....  <br>Hello<br>I would like to talk to you<br>  :)<br>";
+  chatLogg: String = "............................<br>";
+
+  chatLog: String = `
+.....T___......<br>
+.....|[o]|.....<br>
+.....\_-_/.....<br>
+()ooo|\=/|ooo()<br>
+.....|___|.....<br>
+.....//.\\.....<br>
+...._\\.//_....<br>`;
+
+  promptAvailable = false;
 
   constructor() {}
 
   ngOnInit() {
-  
-     this.selff = this;
+
+    this.selff = this;
     //this.typeWriter(this.text, 0);
     this.typeWriter(this.chatLog, 0);
   }
@@ -30,17 +43,30 @@ export class TerminalComponent implements OnInit {
 
   typeWriter(_text, n) {
     if (n < (_text.length)) {
+      this.promptAvailable = false;
       $('.test').html(_text.substring(0, n + 1));
       n++;
 
-      this.timer = setTimeout(() => this.selff.typeWriter(_text, n), 70);
+      this.timer = setTimeout(() => this.selff.typeWriter(_text, n), 7);
     } else {
       console.log('finished with typing');
+      this.promptAvailable = true;
+      document.getElementById("focuss").focus();
     }
   }
 
-  hitEnter(){
-    console.log('works');
+  hitEnter() {
+    let stringLength = $('.test').html().length;
+    console.log(stringLength);
+    console.log(this.newInput);
+    if (this.newInput.length <= this.AllowedLengthInput) {
+    document.getElementById("blinking").focus();
+      
+      this.chatLog = this.chatLog + '<br>' + this.newInput;
+      this.typeWriter(this.chatLog, stringLength);
+      this.newInput = "";
+    }
+
   }
 
 

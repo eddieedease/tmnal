@@ -154,7 +154,8 @@ p:last-child:after {
   height: 245px;
   flex: 0 0 95%;
   overflow-y: auto;
-  font-size: 12px;
+  font-size: 14px;
+  font-family:monospace;
 }
 .terminal::-webkit-scrollbar {
     width: 8px;
@@ -176,7 +177,7 @@ p:last-child:after {
 .prompt {
   color: #00fe00;
   font-family: monospace;
-  line-height: 1.2;
+  line-height: 1.1;
   margin-right: 5px
 }
 
