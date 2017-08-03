@@ -26,6 +26,10 @@ export class TerminalComponent implements OnInit {
   newInput: String;
   AllowedLengthInput = 40;
 
+
+  reponses: Array<String>;
+
+
   
   chatLog: String = `
 ..............................<br>
@@ -35,7 +39,11 @@ export class TerminalComponent implements OnInit {
 ()ooo|\=/|ooo()<br>
 .....|___|.....<br>
 .....//.\\.....<br>
-...._\\.//_....<br>`;
+...._\\.//_....<br>
+...........................<br>
+<br>
+Hello Human, please interact with me<br>
+`;
 
   promptAvailable = false;
 
@@ -47,6 +55,17 @@ export class TerminalComponent implements OnInit {
     this.selff = this;
     //this.typeWriter(this.text, 0);
     this.typeWriter(this.chatLog, 0);
+
+    this.reponses = [
+      'Muhahahaa',
+      'AI to the rescue',
+      "I'm not funtioning properly right now",
+      'Sex, drugs and Rock n ROLL',
+      "Don't get the politicatl with me, please",
+      "Pretty please",
+      "Play with me",
+    ]
+
   }
 
 
@@ -82,17 +101,18 @@ export class TerminalComponent implements OnInit {
           this.promptAvailable = true;
           this.currentState = 'waiting';
           document.getElementById("focuss").focus();
+          this.aiThinking = false;
           break;
       }
     }
   }
 
   hitEnter() {
-    let stringLength = $('.test').html().length;
+    const stringLength = $('.test').html().length;
     console.log(stringLength);
 
     console.log(this.newInput);
-    let self = this.selff;
+    const self = this.selff;
     // set state
     this.currentState ='userrepsonse';
     
@@ -100,7 +120,7 @@ export class TerminalComponent implements OnInit {
     setTimeout(function () {
       // CALL THE AI PROGRAM!
       self.callAI();
-    }, 3500);
+    }, 2000);
 
     // First display the user input on the screen 
     if (this.newInput.length <= this.AllowedLengthInput) {
@@ -108,6 +128,7 @@ export class TerminalComponent implements OnInit {
       this.chatLog = this.chatLog + '<br><span style="color:#00fe00" class="prompt">$ ' + this.newInput + ' </span>';
       this.typeWriter(this.chatLog, stringLength);
       this.newInput = "";
+
     }
     this.aiThinking = true;
 
@@ -122,16 +143,18 @@ export class TerminalComponent implements OnInit {
       console.log("this gets called right?");
       this.currentState ='responding';
 
-      // NO NEED document.getElementById("blinking").focus();
-      let displaymessage = '<br><span  class="prompt">Mu hahahahahaha TAKE OVER</span>';
+
+
+      const RanString = Math.floor(Math.random() * this.reponses.length) + 0 ;
+
       
+      // NO NEED document.getElementById("blinking").focus();
+      const displaymessage = '<br><span  class="prompt">' + this.reponses[RanString] + '</span>';
       this.chatLog = this.chatLog + displaymessage;
       // start from which char count?
-      let stringLength = this.chatLog.length - displaymessage.length;
-
+      const stringLength = this.chatLog.length - displaymessage.length;
       this.typeWriter(this.chatLog, stringLength);
       this.newInput = "";
-    
   }
   
 
