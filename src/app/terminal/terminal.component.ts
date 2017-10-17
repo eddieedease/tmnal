@@ -27,10 +27,10 @@ export class TerminalComponent implements OnInit {
   AllowedLengthInput = 40;
 
 
-  reponses: Array<String>;
+  reponses: Array < String > ;
 
 
-  
+
   chatLog: String = `
 ..............................<br>
 .....T___......<br>
@@ -43,6 +43,10 @@ export class TerminalComponent implements OnInit {
 ...........................<br>
 <br>
 Hello Human, please interact with me<br>
+
+<br><br> please tell me <br>
+What is your name?
+
 `;
 
   promptAvailable = false;
@@ -52,18 +56,22 @@ Hello Human, please interact with me<br>
   constructor() {}
 
   ngOnInit() {
+    // make the self reference
     this.selff = this;
-    //this.typeWriter(this.text, 0);
+    
     this.typeWriter(this.chatLog, 0);
 
     this.reponses = [
       'Muhahahaa',
       'AI to the rescue',
-      "I'm not funtioning properly right now",
+      'I\'m not funtioning properly right now',
       'Sex, drugs and Rock n ROLL',
-      "Don't get the politicatl with me, please",
-      "Pretty please",
-      "Play with me",
+      'Don\'t get the political with me, please',
+      'Pretty please',
+      'Play with me',
+      'Do I look like I Care?',
+      'Floppies, Floppies, do you remember floppies??',
+      'Let\'s delve a little in bit deeper in that skull of yours..'
     ]
 
   }
@@ -76,15 +84,15 @@ Hello Human, please interact with me<br>
       $('.test').html(_text.substring(0, n + 1));
       n++;
       switch (this.currentState) {
-        case "userrepsonse":
+        case 'userrepsonse':
           // change into different speeds? // HACK
           this.timer = setTimeout(() => this.selff.typeWriter(_text, n), 1);
           break;
-        case "responding":
+        case 'responding':
           // change into different speeds? // HACK
           this.timer = setTimeout(() => this.selff.typeWriter(_text, n), 10);
           break;
-        case "booting":
+        case 'booting':
           this.timer = setTimeout(() => this.selff.typeWriter(_text, n), 1);
           break;
       }
@@ -93,20 +101,23 @@ Hello Human, please interact with me<br>
       // comes from state
       switch (this.currentState) {
         case 'booting':
-        this.promptAvailable = true;
+          this.promptAvailable = true;
+          const objDiv = document.getElementById('terminal');
+          objDiv.scrollTop = objDiv.scrollHeight;
           break;
         case 'userrepsonse':
           break;
         case 'responding':
           this.promptAvailable = true;
           this.currentState = 'waiting';
-          document.getElementById("focuss").focus();
+          document.getElementById('focuss').focus();
           this.aiThinking = false;
           break;
       }
     }
   }
 
+  // message send by user
   hitEnter() {
     const stringLength = $('.test').html().length;
     console.log(stringLength);
@@ -114,8 +125,8 @@ Hello Human, please interact with me<br>
     console.log(this.newInput);
     const self = this.selff;
     // set state
-    this.currentState ='userrepsonse';
-    
+    this.currentState = 'userrepsonse';
+
     // NOTE this is the timeOut function
     setTimeout(function () {
       // CALL THE AI PROGRAM!
@@ -127,7 +138,7 @@ Hello Human, please interact with me<br>
       // NO NEED document.getElementById("blinking").focus();
       this.chatLog = this.chatLog + '<br><span style="color:#00fe00" class="prompt">$ ' + this.newInput + ' </span>';
       this.typeWriter(this.chatLog, stringLength);
-      this.newInput = "";
+      this.newInput = '';
 
     }
     this.aiThinking = true;
@@ -139,24 +150,25 @@ Hello Human, please interact with me<br>
 
 
   // The AI Program
-  callAI(){
-      console.log("this gets called right?");
-      this.currentState ='responding';
+  callAI() {
+    console.log(this.newFunction());
+    this.currentState = 'responding';
 
 
 
-      const RanString = Math.floor(Math.random() * this.reponses.length) + 0 ;
+    const RanString = Math.floor(Math.random() * this.reponses.length) + 0;
 
-      
-      // NO NEED document.getElementById("blinking").focus();
-      const displaymessage = '<br><span  class="prompt">' + this.reponses[RanString] + '</span>';
-      this.chatLog = this.chatLog + displaymessage;
-      // start from which char count?
-      const stringLength = this.chatLog.length - displaymessage.length;
-      this.typeWriter(this.chatLog, stringLength);
-      this.newInput = "";
+
+    // NO NEED document.getElementById("blinking").focus();
+    const displaymessage = '<br><span  class="prompt">' + this.reponses[RanString] + '</span>';
+    this.chatLog = this.chatLog + displaymessage;
+    // start from which char count?
+    const stringLength = this.chatLog.length - displaymessage.length;
+    this.typeWriter(this.chatLog, stringLength);
+    this.newInput = '';
+    const objDiv = document.getElementById('terminal');
+    objDiv.scrollTop = objDiv.scrollHeight;
   }
-  
 
 
 
@@ -169,4 +181,9 @@ Hello Human, please interact with me<br>
 
 
 
+
+
+    private newFunction(): any {
+        return 'this gets called right?';
+    }
 }
