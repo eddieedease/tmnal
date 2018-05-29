@@ -165,6 +165,6 @@ a:hover {
 }
 
 .pop {
-    background-image: url("../assets/hmm.png");
-    background-size: cover;
+    /* background-image: url("../assets/hmm.png");
+    background-size: cover; */
 }
