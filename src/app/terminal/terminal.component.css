@@ -2,6 +2,10 @@ a {
     color: #fff;
 }
 
+.tmnal {
+    color: #fff;
+}
+
 .wrap {
     margin: 30px auto;
     text-align: left !important;
@@ -165,6 +169,7 @@ p:last-child:after {
 .terminal::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: #00fe00;
+  
 }
 
 .currentLine {
@@ -209,5 +214,5 @@ p:last-child:after {
 }
 
 .outputContainer {
-  margin: 0 10px;
+ margin:20px;
 }
