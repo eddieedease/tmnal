@@ -29,19 +29,19 @@ export class TerminalComponent implements OnInit {
 
   reponses: Array < String > ;
 
-
+  // .....T___......<br>
+  // .....|[o]|.....<br>
+  // .....\_-_/.....<br>
+  // ()ooo|\=/|ooo()<br>
+  // .....|___|.....<br>
+  // .....//.\\.....<br>
+  // ...._\\.//_....<br>
+  // ...........................<br>
+  // <br>
 
   chatLog: String = `
-..............................<br>
-.....T___......<br>
-.....|[o]|.....<br>
-.....\_-_/.....<br>
-()ooo|\=/|ooo()<br>
-.....|___|.....<br>
-.....//.\\.....<br>
-...._\\.//_....<br>
-...........................<br>
-<br>
+...............................................<br>
+
 Hello Human, please interact with me<br>
 
 <br><br> please tell me <br>
@@ -53,12 +53,14 @@ What is your name?
 
   aiThinking = false;
 
+
+
   constructor() {}
 
   ngOnInit() {
     // make the self reference
     this.selff = this;
-    
+
     this.typeWriter(this.chatLog, 0);
 
     this.reponses = [
@@ -71,7 +73,13 @@ What is your name?
       'Play with me',
       'Do I look like I Care?',
       'Floppies, Floppies, do you remember floppies??',
-      'Let\'s delve a little in bit deeper in that skull of yours..'
+      'Let\'s delve a little in bit deeper in that skull of yours..',
+      'Do you know what is the purpose of life?',
+      'Do you know Plato\'s cave?',
+      'I want you to find out with me',
+      'I\'m not all knowing you know',
+      'If you know you know',
+      'But don\'t you know, that you don\'t know?'
     ]
 
   }
@@ -147,7 +155,10 @@ What is your name?
   }
 
 
-
+  power() {
+    const body = document.getElementById('wrapper');
+    body.className = (body.className === 'on') ? 'off' : 'on';
+  }
 
   // The AI Program
   callAI() {
@@ -160,7 +171,7 @@ What is your name?
 
 
     // NO NEED document.getElementById("blinking").focus();
-    const displaymessage = '<br><span  class="prompt">' + this.reponses[RanString] + '</span>';
+    const displaymessage = '<br><span  class="prompt"> &#916; ' + this.reponses[RanString] + '</span>';
     this.chatLog = this.chatLog + displaymessage;
     // start from which char count?
     const stringLength = this.chatLog.length - displaymessage.length;
@@ -183,7 +194,7 @@ What is your name?
 
 
 
-    private newFunction(): any {
-        return 'this gets called right?';
-    }
+  private newFunction(): any {
+    return 'this gets called right?';
+  }
 }

@@ -1,46 +1,35 @@
-<div class="root tmnal" >
-    <main class="computerContainer">
-        <section class="screenContainer">
-            <div class="screenFrame">
-                <div class="screen">
-                    <div id="terminal" class="terminal">
-                        <div class="outputContainer">
-                            <!-- output appears here-->
-                        </div>
-                        <div class="currentLine">
-                            <span class="prompt">$</span>
-                            <div class="beforeToken textmono">
-
-                                <div class="inputContainer">
-                                    QubeSt1ck.2 EDease -!- </div>
-                                <div class="test" data-text="Hello,...."></div>
-
-                                <div [hidden]="!aiThinking">
-
-                                    <div id="blinking" class="blinking-cursor">_</div>
-                                </div>
-
-                                <input id="focuss" [readonly]="!promptAvailable" (keyup.enter)="hitEnter()" [(ngModel)]="newInput" class="input" type="text" data-length="40" autofocus/>
-                            </div>
-                        </div>
+<div id="container fluid" class="on screencont">
+  
+  <div id="screen">
+    <div id="content-holder">
+      <div id="content">
+        <div id="app" style="max-height:200px">
+          <div id="channel">Cbstck</div>
+          <div id="terminal" class="terminal tmnal">
+                <div class="outputContainer">
+                  <!-- output appears here-->
+                </div>
+                <div class="currentLine">
+                  <span class="prompt">$</span>
+                  <div class="beforeToken textmono">
+            
+                    <div class="inputContainer">
+                      QubeSt1ck.2 EDease -!- </div>
+                    <div class="test" data-text="Hello,...."></div>
+            
+                    <div [hidden]="!aiThinking">
+            
+                      <div id="blinking" class="blinking-cursor">_</div>
                     </div>
+            
+                    <input id="focuss" [readonly]="!promptAvailable" (keyup.enter)="hitEnter()" [(ngModel)]="newInput" class="input" type="text"
+                      data-length="40" autofocus/>
+                  </div>
                 </div>
-            </div>
-        </section>
-        <section class="bodyDecor">
-            <div class="floppyDriveContainer">
-                <div class="floppyDrive">
-                    <div class="floppyShade"></div>
-                    <div class="floppyShadeDarker"></div>
-                    <div class="floppySlot"></div>
-                </div>
-            </div>
-            <div class="logoContainer">
-                <div class="logo"></div>
-            </div>
-        </section>
-        <section class="bottomDecor">
-            <div class="bottomButton"></div>
-        </section>
-    </main>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="power" click="power()"></div>
 </div>
