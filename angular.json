@@ -5,7 +5,7 @@
   "projects": {
     "ai": {
       "root": "",
-      "sourceRoot": "src",
+      "sourceRoot": "",
       "projectType": "application",
       "architect": {
         "build": {

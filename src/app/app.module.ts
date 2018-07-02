@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { TerminalComponent } from './terminal/terminal.component';
-import { MainComponent } from './main/main.component';
+import { TerminalComponent } from '././terminal/terminal.component';
+import { MainComponent } from '././main/main.component';
 
 // needies?
 import * as $ from 'jquery';
@@ -12,8 +12,8 @@ import * as $ from 'jquery';
 @NgModule({
   declarations: [
     AppComponent,
-    TerminalComponent,
-    MainComponent
+    MainComponent,
+    TerminalComponent
   ],
   imports: [
     BrowserModule,
