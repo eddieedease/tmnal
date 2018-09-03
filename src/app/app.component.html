@@ -1,27 +1,56 @@
-<div class="container-fluid">
-    <div class="row pop">
-        <div class="col s12 m12 l6">
-            <div class="card">
-                <div class="card-content">
-                  <p>Welcome to the game</p>
-                </div>
-                <div class="card-tabs">
-                  <ul class="tabs tabs-fixed-width">
-                    <li class="tab"><a class="active" href="#test4"><i class="material-icons">class</i></a></li>
-                    <li class="tab"><a  href="#test5"><i class="material-icons">create</i></a></li>
-                    <li class="tab"><a href="#test6"><i class="material-icons">help_outline</i></a></li>
-                  </ul>
-                </div>
-                <div class="card-content grey lighten-4">
-                  <div id="test4">Status</div>
-                  <div id="test5">Notes</div>
-                  <div id="test6">Hint</div>
-                </div>
-              </div>
-                        
+<div class="container">
+  <div class="row">
+    <div class="col s12 m12 l5">
+      <div class="card" style="float:left;z-index: 1000;background-color: black">
+        <div class="card-image">
+          <img src="assets/inspector.png">
+
         </div>
-        <div class="col s12 m12 l6">
-            <app-terminal></app-terminal>
+        <div class="card-content">
+          <p style="color:white">{{detecText}}</p>
         </div>
+        <div class="card-tabs">
+          <ul class="tabs tabs-fixed-width">
+            <li class="tab"><a class="active" href="#test4"><i class="material-icons">class</i> Status</a></li>
+            <li class="tab"><a href="#test5"><i class="material-icons">create</i> Notes</a></li>
+            <li class="tab"><a href="#test6"><i class="material-icons">help_outline</i></a></li>
+          </ul>
+        </div>
+        <div class="card-content grey lighten-4">
+          <div id="test4">
+            <ul style="padding-left:10px">
+              <li style="list-style: disc !important">
+                Item 1
+              </li>
+              <li style="list-style: disc !important">
+                Item 2
+              </li>
+              <li style="list-style: disc !important">
+                Item 3
+              </li >
+              <li style="list-style: disc !important">
+                Item 4
+              </li>
+            </ul>
+          </div>
+          <div id="test5">Notes</div>
+          <div id="test6">Hint</div>
+        </div>
+      </div>
     </div>
+
+    <div class="col s12 m12 l6">
+      <div class='background'></div>
+      <div class='overlay'>
+        <div class='main'>
+          <h1>
+            404
+          </h1>
+          <p>Something_went_wrong.</p>
+        </div>
+      </div>
+<br><br>
+      <app-terminal></app-terminal>
+    </div>
+  </div>
 </div>

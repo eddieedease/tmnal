@@ -288,7 +288,7 @@ p:last-child:after {
     animation: screen-turn-on .4s linear .5s 1 forwards;
 }
 #power {
-    bottom: 12px;
+    top: 12px;
     width: 35px;
     height: 5px;
     position: absolute;

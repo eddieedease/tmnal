@@ -1,35 +1,37 @@
 <div id="container fluid" class="on screencont">
-  
+
   <div id="screen">
-    <div id="content-holder">
-      <div id="content">
-        <div id="app" style="max-height:200px">
+      <div id="power" (click)="power()"></div>
+
+    <div  id="content-holder">
+
+      <div   id="content"  [style.visibility]="!powerIsOn == true  ? 'hidden' : 'visible'">
+        <div  id="app"  style="max-height:200px">
           <div id="channel">Cbstck</div>
-          <div id="terminal" class="terminal tmnal">
-                <div class="outputContainer">
-                  <!-- output appears here-->
+          
+          <div  id="terminal" class="terminal tmnal">
+
+            <div class="currentLine">
+              <span class="prompt">$</span>
+              <div class="beforeToken textmono">
+
+                <div class="inputContainer">
+                  QubeSt1ck.2 EDease -!- </div>
+                <div class="test" data-text="Hello,...."></div>
+
+                <div [hidden]="!aiThinking">
+
+                  <div id="blinking" class="blinking-cursor">_</div>
                 </div>
-                <div class="currentLine">
-                  <span class="prompt">$</span>
-                  <div class="beforeToken textmono">
-            
-                    <div class="inputContainer">
-                      QubeSt1ck.2 EDease -!- </div>
-                    <div class="test" data-text="Hello,...."></div>
-            
-                    <div [hidden]="!aiThinking">
-            
-                      <div id="blinking" class="blinking-cursor">_</div>
-                    </div>
-            
-                    <input id="focuss" [readonly]="!promptAvailable" (keyup.enter)="hitEnter()" [(ngModel)]="newInput" class="input" type="text"
-                      data-length="40" autofocus/>
-                  </div>
-                </div>
+
+                <input id="focuss" [readonly]="!promptAvailable" (keyup.enter)="hitEnter()" [(ngModel)]="newInput"
+                  class="input" type="text" data-length="40" autofocus />
               </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div id="power" click="power()"></div>
+
 </div>

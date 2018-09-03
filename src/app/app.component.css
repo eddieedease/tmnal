@@ -168,3 +168,67 @@ a:hover {
     /* background-image: url("../assets/hmm.png");
     background-size: cover; */
 }
+
+
+
+
+
+/* OK THIS IS THE GLITCH PAGE */
+
+
+
+.overlay {
+  position:fixed;
+  top:0;
+  right:0;
+  left:0;
+  bottom:0;
+   background-color:rgba(0,0,0,0.9);
+}
+
+.background {
+-webkit-filter: grayscale(1);
+  position:fixed;
+  top:0;
+  right:0;
+  left:0;
+  bottom:0;
+  background: linear-gradient(135deg, #eee 0%,#fff 100%);
+  overflow:scroll;
+      background: url(https://media.giphy.com/media/3o7abyxq8aZ1zRa5zi/giphy.gif) no-repeat center center;
+  background-size:cover;
+  width:100%;
+  height:100%;
+}
+
+.main {  
+  width:100%;
+  margin:0px auto;
+  text-align:center;
+  h1 {
+    display:inline-block;
+    margin:100px auto;
+    text-align:center;
+    font-size:25em;
+    font-weight:800;
+    background: url(https://media.giphy.com/media/3o7abyxq8aZ1zRa5zi/giphy.gif) no-repeat;
+    background-size:cover;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+  }
+  
+  p{
+    display:inline-block;
+    padding-left:50px;
+    padding-top:10px;
+    margin-left:-350px;
+    margin-top:20px;
+    padding-bottom:5px;
+    color:#5CD45C;
+    border-top:1px dashed #5CD45C;
+    text-shadow:1px 1px 0px #444;
+    position:relative;
+    letter-spacing:0.3em;
+    text-transform: uppercase;
+  }
+}

@@ -61,6 +61,8 @@ What is your name?
 
   aiThinking = false;
 
+  powerIsOn = false;
+
 
 
   constructor() {}
@@ -69,8 +71,8 @@ What is your name?
     // make the self reference
     this.selff = this;
 
-    this.typeWriter(this.chatLog, 0);
-
+    
+    // init responses
     this.reponses = [
       'Muhahahaa',
       'AI to the rescue',
@@ -164,8 +166,11 @@ What is your name?
 
 
   power() {
-    const body = document.getElementById('wrapper');
-    body.className = (body.className === 'on') ? 'off' : 'on';
+    this.powerIsOn = true;
+    // start machine
+    this.typeWriter(this.chatLog, 0);
+    // const body = document.getElementById('wrapper');
+    // body.className = (body.className === 'on') ? 'off' : 'on';
   }
 
   // The AI Program
