@@ -193,9 +193,6 @@ a:hover {
   right:0;
   left:0;
   bottom:0;
-  background: linear-gradient(135deg, #eee 0%,#fff 100%);
-  overflow:scroll;
-      background: url(https://media.giphy.com/media/3o7abyxq8aZ1zRa5zi/giphy.gif) no-repeat center center;
   background-size:cover;
   width:100%;
   height:100%;
@@ -205,21 +202,17 @@ a:hover {
   width:100%;
   margin:0px auto;
   text-align:center;
-  h1 {
-    display:inline-block;
-    margin:100px auto;
-    text-align:center;
-    font-size:25em;
-    font-weight:800;
-    background: url(https://media.giphy.com/media/3o7abyxq8aZ1zRa5zi/giphy.gif) no-repeat;
-    background-size:cover;
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
-  }
+}
+
+.notess{
+    background-image: url('assets/notes.png');
+    font-family: 'Indie Flower', cursive;
+    font-size: larger
+}
   
   p{
     display:inline-block;
-    padding-left:50px;
+    padding-left:10px;
     padding-top:10px;
     margin-left:-350px;
     margin-top:20px;
@@ -231,4 +224,3 @@ a:hover {
     letter-spacing:0.3em;
     text-transform: uppercase;
   }
-}

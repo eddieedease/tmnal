@@ -1,6 +1,8 @@
 import {
   Component,
-  OnInit
+  OnInit,
+  EventEmitter,
+  Output
 } from '@angular/core';
 
 @Component({
@@ -9,6 +11,8 @@ import {
   styleUrls: ['./terminal.component.css']
 })
 export class TerminalComponent implements OnInit {
+
+  @Output() textChangeDetec = new EventEmitter<string>();
 
   text: any;
   selff;
@@ -171,7 +175,10 @@ What is your name?
     this.typeWriter(this.chatLog, 0);
     // const body = document.getElementById('wrapper');
     // body.className = (body.className === 'on') ? 'off' : 'on';
+    this.textChangeDetec.emit('complete');
   }
+
+  
 
   
   // The AI Program

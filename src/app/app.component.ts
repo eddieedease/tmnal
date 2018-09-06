@@ -12,7 +12,8 @@ export class AppComponent {
 
 
 
-  changeText(){
+  changeDetecText(_event){
+    console.log('comes here?');
     this.detecText = 'Great, you\'re in';
   }
 }

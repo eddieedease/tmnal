@@ -16,7 +16,7 @@
             <li class="tab"><a href="#test6"><i class="material-icons">help_outline</i></a></li>
           </ul>
         </div>
-        <div class="card-content grey lighten-4">
+        <div class="card-content grey notess lighten-4">
           <div id="test4">
             <ul style="padding-left:10px">
               <li style="list-style: disc !important">
@@ -41,16 +41,9 @@
 
     <div class="col s12 m12 l6">
       <div class='background'></div>
-      <div class='overlay'>
-        <div class='main'>
-          <h1>
-            404
-          </h1>
-          <p>Something_went_wrong.</p>
-        </div>
-      </div>
+      
 <br><br>
-      <app-terminal></app-terminal>
+      <app-terminal (textChangeDetec)="changeDetecText($event)"></app-terminal>
     </div>
   </div>
 </div>
