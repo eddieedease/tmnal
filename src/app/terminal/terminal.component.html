@@ -1,7 +1,7 @@
 <div id="container fluid" class="on screencont">
 
-  <div id="screen">
-      <div id="power" (click)="power()"></div>
+  <div id="screen" (click)="focusOnScreen()">
+      
 
     <div  id="content-holder">
 
@@ -9,13 +9,13 @@
         <div  id="app"  style="max-height:200px">
           <div id="channel">Cbstck</div>
           
-          <div  id="terminal" class="terminal tmnal">
+          <div  id="terminal" class="terminal tmnal" style="height:360px !important">
 
             <div class="currentLine">
               <span class="prompt">$</span>
               <div class="beforeToken textmono">
 
-                <div class="inputContainer">
+                <div class="inputContainer" >
                   QubeSt1ck.2 EDease -!- </div>
                 <div class="test" data-text="Hello,...."></div>
 
@@ -32,6 +32,7 @@
         </div>
       </div>
     </div>
+    <div id="power" (click)="power()" style="margin-top:460px"></div>
   </div>
 
 </div>

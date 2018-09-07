@@ -205,7 +205,7 @@ a:hover {
 }
 
 .notess{
-    background-image: url('assets/notes.png');
+    background-image: url('/assets/notes.png');
     font-family: 'Indie Flower', cursive;
     font-size: larger
 }

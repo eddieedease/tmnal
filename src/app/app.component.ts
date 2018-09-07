@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
 
-  detecText = 'Welcome to the game, to start.. press the button';
+  detecText = 'Listen rookie, I need you. To start press power';
 
 
 

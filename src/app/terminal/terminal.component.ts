@@ -5,6 +5,23 @@ import {
   Output
 } from '@angular/core';
 
+import {
+  Http,
+  Response,
+  Headers,
+  RequestOptions
+} from '@angular/http';
+
+import {
+  Observable,
+  Subject
+} from 'rxjs';
+
+
+import {
+  map
+} from 'rxjs/operators';
+
 @Component({
   selector: 'app-terminal',
   templateUrl: './terminal.component.html',
@@ -12,10 +29,13 @@ import {
 })
 export class TerminalComponent implements OnInit {
 
-  @Output() textChangeDetec = new EventEmitter<string>();
+  @Output() textChangeDetec = new EventEmitter < string > ();
 
   text: any;
   selff;
+
+  // responses
+  resp = {};
 
   // STATES
   // 'booting' --> Bootingup
@@ -68,14 +88,23 @@ What is your name?
   powerIsOn = false;
 
 
-
-  constructor() {}
+  // inject http
+  constructor(private http_: Http) {
+    this.http_.get('assets/responses/resp.json')
+      .pipe(map(res => res.json()))
+      .toPromise()
+      .then((_resp) => {
+        // do stuff with the config
+        this.resp = _resp;
+        console.log(this.resp);
+      });
+  }
 
   ngOnInit() {
     // make the self reference
     this.selff = this;
 
-    
+
     // init responses
     this.reponses = [
       'Muhahahaa',
@@ -95,6 +124,9 @@ What is your name?
       'If you know you know',
       'But don\'t you know, that you don\'t know?'
     ]
+
+
+
 
   }
 
@@ -124,6 +156,8 @@ What is your name?
       switch (this.currentState) {
         case 'booting':
           this.promptAvailable = true;
+          document.getElementById('focuss').focus();
+
           const objDiv = document.getElementById('terminal');
           objDiv.scrollTop = objDiv.scrollHeight;
           break;
@@ -137,6 +171,10 @@ What is your name?
           break;
       }
     }
+  }
+
+  focusOnScreen() {
+    document.getElementById('focuss').focus();
   }
 
   // message send by user
@@ -170,17 +208,21 @@ What is your name?
 
 
   power() {
-    this.powerIsOn = true;
-    // start machine
-    this.typeWriter(this.chatLog, 0);
-    // const body = document.getElementById('wrapper');
-    // body.className = (body.className === 'on') ? 'off' : 'on';
-    this.textChangeDetec.emit('complete');
+
+    if (this.powerIsOn === false) {
+      this.powerIsOn = true;
+      // start machine
+
+      setTimeout(() => this.selff.typeWriter(this.chatLog, 0), 2000);
+      // const body = document.getElementById('wrapper');
+      // body.className = (body.className === 'on') ? 'off' : 'on';
+      this.textChangeDetec.emit('complete');
+    }
   }
 
-  
 
-  
+
+
   // The AI Program
   callAI() {
     console.log(this.newFunction());
