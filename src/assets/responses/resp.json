@@ -1,4 +1,6 @@
 {
-    "helloworld" : "Multilingual",
-    "currentLang" : "Nederlands"
+  "turnon": {
+    "nl": "Je dient de computer aan te zetten met de blauwe knop.",
+    "eng": "Turn on the computer with the blue button."
+  }
 }
