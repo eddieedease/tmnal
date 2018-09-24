@@ -196,7 +196,7 @@ What is your name?
     // First display the user input on the screen 
     if (this.newInput.length <= this.AllowedLengthInput) {
       // NO NEED document.getElementById("blinking").focus();
-      this.chatLog = this.chatLog + '<br><span style="color:#00fe00" class="prompt">$ ' + this.newInput + ' </span>';
+      this.chatLog = this.chatLog + '<br><span style="color:#fff" class="prompt">$ ' + this.newInput + ' </span>';
       this.typeWriter(this.chatLog, stringLength);
       this.newInput = '';
 

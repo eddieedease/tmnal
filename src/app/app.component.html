@@ -1,22 +1,29 @@
 <div class="container">
   <div class="row"><br>
-    <div class="center-align">
+    <!-- <div class="center-align">
         <h6 class="center-align white-text">We must protect</h6>
       <img  style="max-width:200px" class="responsive-img" src="assets/bg.png">
       
+    </div> -->
+
+
+    <div class="col s12 m12 l8" style="background-color: grey">
+      <br><br>
+      <app-terminal (textChangeDetec)="changeDetecText($event)"></app-terminal>
+      <br><br> <br><br>
     </div>
-    <div class="col s12 m12 l5">
-      <div class="card" style="float:left;z-index: 1000;background-color: black">
+    <div class="col s8 m12 l4"><br>
+      <div class="card" style="z-index: 1000;background-color: black; border-top-left-radius: 20px;border-top-right-radius: 20px">
         <div class="card-image">
-          <img src="assets/inspector.png">
+          <img src="assets/1.png">
         </div>
         <div class="card-content center">
           <p style="color:white">{{detecText}}</p>
         </div>
         <div class="card-tabs notess">
-          <ul class="tabs tabs-fixed-width" style="padding-top: 10px;">
-            <li class="tab"><a class="active" href="#test4"><i class="material-icons black-text">class</i> Status</a></li>
-            <li class="tab"><a href="#test5"><i class="material-icons black-text">create</i> Notes</a></li>
+          <ul class="tabs" style="padding-top: 10px;overflow: hidden;">
+            <li class="tab"><a class="active" href="#test4"><i class="material-icons black-text">class</i></a></li>
+            <li class="tab"><a href="#test5"><i class="material-icons black-text">create</i> </a></li>
             <li class="tab"><a href="#test6"><i class="material-icons black-text">help_outline</i></a></li>
           </ul>
         </div>
@@ -32,24 +39,17 @@
               </li>
               <li style="list-style: disc !important">
                 Item 3
-              </li >
+              </li>
               <li style="list-style: disc !important">
                 Item 4
               </li>
             </ul>
           </div>
           <div id="test5">Fine place for notes</div>
-          <div id="test6">Stuck? Here you can get a hint. We won't tell anyone<br><br><a class="waves-effect waves-light btn">Play intro</a></div>
+          <div id="test6">Stuck? Here you can get a hint. We won't tell anyone<br><br><a class="waves-effect waves-light btn">Play
+              intro</a></div>
         </div>
       </div>
     </div>
-
-    <div class="col s12 m12 l6 ">
-      
-            
-<br><br>
-      <app-terminal (textChangeDetec)="changeDetecText($event)"></app-terminal>
-    </div>
   </div>
 </div>
-
