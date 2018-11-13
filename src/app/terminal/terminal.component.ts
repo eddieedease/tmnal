@@ -66,13 +66,21 @@ export class TerminalComponent implements OnInit {
   chatLog: String = `
   <br>
   <br>
-....Booting...........................................<br>
+....Booting&#9829;..........................................<br>
 ......................................................<br>
 ......................................................<br>
 <br>
 Hello Human,<br>
 <br><br> Riddle me this<br>
-
+<br>
+<br>
+What are you looking for?<br>
+<br>
+A) The answers of life <br>
+B) Some deep mind talk <br>
+C) Advice of the GodBit <br>
+<br>
+Answer with either A-B-C-D<br>
 `;
 
   promptAvailable = false;
