@@ -66,9 +66,17 @@ export class TerminalComponent implements OnInit {
   chatLog: String = `
   <br>
   <br>
-....Booting&#9829;..........................................<br>
-......................................................<br>
-......................................................<br>
+....Booting&#9829;<br>
+..<br>
+..<br>
+..<br>
+..<br>
+..<br>
+..<br>
+..<br>
+..<br>
+..<br>
+..&#9829;<br>
 <br>
 Hello Human,<br>
 <br><br> Riddle me this<br>
