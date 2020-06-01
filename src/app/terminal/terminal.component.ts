@@ -91,6 +91,12 @@ C) Advice of the GodBit <br>
 Answer with either A-B-C-D<br>
 `;
 
+chatPoweroff: String = `
+  <br>
+  <br>
+....
+`;
+
   promptAvailable = false;
 
   aiThinking = false;
@@ -223,10 +229,15 @@ Answer with either A-B-C-D<br>
       this.powerIsOn = true;
       // start machine
 
-      setTimeout(() => this.selff.typeWriter(this.chatLog, 0), 2000);
+      setTimeout(() => this.selff.typeWriter(this.chatLog, 0), 1000);
       // const body = document.getElementById('wrapper');
       // body.className = (body.className === 'on') ? 'off' : 'on';
       this.textChangeDetec.emit('complete');
+    } else {
+      
+      this.selff.typeWriter(this.chatPoweroff, 0)
+      this.powerIsOn = false;
+      
     }
   }
 

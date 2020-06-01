@@ -109,7 +109,7 @@ p:last-child:after {
   width: 90%;
   overflow-y: scroll;
  
-  font-size: 14px;
+  font-size: 16px;
   font-family:monospace;
 }
 .terminal::-webkit-scrollbar {
@@ -267,10 +267,11 @@ p:last-child:after {
     animation: screen-turn-on .4s linear .5s 1 forwards;
 }
 #power {
-    top: 12px;
+    top: 80px;
     width: 35px;
-    height: 10px;
+    height: 30px;
     position: absolute;
+    border-radius: 20px;
     right: 45px;
     background-color: #282828;
     cursor: pointer;
